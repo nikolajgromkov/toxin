@@ -1,0 +1,59 @@
+@import './reset';
+
+// colors
+$primary-color: #BC9CFF;
+$secondary-color: #6FCF97;
+$dark-color: #1F2041;
+$colors: (
+    "primary": (
+        "base": $primary-color
+    ),
+    "secondary": (
+        "base": $secondary-color
+    ),
+    "dark": (
+        "base": $dark-color,
+        "shade-75": rgba($dark-color, .75), 
+        "shade-50": rgba($dark-color, .50), 
+        "shade-25": rgba($dark-color, .25), 
+        "shade-5": rgba($dark-color, .5), 
+    )
+);
+
+@function clr($base, $shade: base) {
+    $color: map-get(map-get($colors, $base), $shade);
+    @return $color;
+}
+
+// typo
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat Regular'), local('Montserrat-Regular'),
+        url('../fonts/Montserrat/Montserrat-Regular.ttf') format('woff2'),
+        url('../fonts/Montserrat/Montserrat-Regular.woff') format('woff'),
+        url('../fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat Bold'), local('Montserrat-Bold'),
+        url('../fonts/Montserrat/Montserrat-Bold.woff2') format('woff2'),
+        url('../fonts/Montserrat/Montserrat-Bold.woff') format('woff'),
+        url('../fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+// components
+@import '../components/UI/textfield/textfield';
+
+body {
+    color: clr(dark);
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    &.uikit {
+        padding: 140px;
+    }
+}

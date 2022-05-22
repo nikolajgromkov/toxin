@@ -1,0 +1,31 @@
+.textfield {
+    $parent: &;
+    display:flex;
+    flex-direction: column;
+    max-width: 320px;
+    margin-bottom: 20px;
+    label {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: clr(dark);
+        margin-bottom: 5px;
+    }
+    input {
+        background: #FFFFFF;
+        font-size:14px;
+        border: 1px solid clr(dark, shade-25);
+        border-radius: 4px;
+        padding: 13px 15px;
+        transition: border-color 0.3s ease;
+        color: clr(dark, shade-75);
+        &::placeholder {
+            color: clr(dark,shade-25);
+        }
+        &:hover, &:focus, &:focus-visible {
+            border-color:clr(dark, shade-50);
+            outline:none;
+        }
+    }
+    
+}

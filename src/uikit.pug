@@ -1,0 +1,9 @@
+include ./components/UI/textfield/textfield
+
+doctype html
+html
+  head
+    title UIKit
+  body.uikit
+    +textfield({name: "email", id: "email", label:"Email", placeholder: "Email"})
+    +textfield({name: "birthday", id: "birthday", label: "День рождения", placeholder: "ДД.ММ.ГГГГ", isMasked: true})

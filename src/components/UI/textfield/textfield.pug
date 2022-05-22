@@ -1,0 +1,7 @@
+mixin textfield(options)
+    -
+        var inputClassName = "textfield__input"
+        inputClassName += options.isMasked ? " textfield__input--masked js-textfield-masked" : ""
+    .textfield
+        label(class="textfield__label" for=options.id)= options.label
+        input(class=inputClassName type="text" id=options.id name=options.name placeholder=options.placeholder)
