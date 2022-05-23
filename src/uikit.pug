@@ -5,5 +5,6 @@ html
   head
     title UIKit
   body.uikit
-    +textfield({name: "email", id: "email", label:"Email", placeholder: "Email"})
-    +textfield({name: "birthday", id: "birthday", label: "День рождения", placeholder: "ДД.ММ.ГГГГ", isMasked: true})
+    +textfield({name: "email", id: "email", label:"Email", placeholder: "Email", mask: "email"})
+    +textfield({name: "birthday", id: "birthday", label: "День рождения", placeholder: "ДД.ММ.ГГГГ", mask: "date"})
+    +textfield({name: "subscription", id: "subscription", label: "Email для рассылок", placeholder: "Email", mask: "email", icon: "arrow_forward"})

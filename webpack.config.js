@@ -12,6 +12,12 @@ const js = {
 	exclude: /node_modules/,
 	loader: 'babel-loader'
 }
+
+const css = {
+	test: /\.css$/i,
+	use: [MiniCssExtractPlugin.loader, "css-loader"],
+}
+
 const scss = {
 	test: /\.scss$/,
 	use: [
@@ -66,7 +72,7 @@ const config = {
 		path: path.resolve(__dirname, 'dist')
 	},
 	module: {
-		rules: [js, scss, img, pug, fonts]
+		rules: [js, css, scss, img, pug, fonts]
 	},
 	plugins: [
 		new CleanWebpackPlugin(),

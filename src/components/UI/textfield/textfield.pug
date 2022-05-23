@@ -1,7 +1,11 @@
 mixin textfield(options)
     -
         var inputClassName = "textfield__input"
-        inputClassName += options.isMasked ? " textfield__input--masked js-textfield-masked" : ""
-    .textfield
+        inputClassName += options.mask ? " js-textfield-" + options.mask : ""
+        var textfieldClassName = "textfield"
+        textfieldClassName += options.icon ? " textfield--withicon" : ""
+    .div(class=textfieldClassName)
+        if options.icon
+            span.material-icons= options.icon
         label(class="textfield__label" for=options.id)= options.label
         input(class=inputClassName type="text" id=options.id name=options.name placeholder=options.placeholder)

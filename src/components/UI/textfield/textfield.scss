@@ -1,9 +1,9 @@
 .textfield {
-    $parent: &;
     display:flex;
     flex-direction: column;
     max-width: 320px;
     margin-bottom: 20px;
+    position: relative;
     label {
         font-size: 12px;
         font-weight: 700;
@@ -14,6 +14,7 @@
     input {
         background: #FFFFFF;
         font-size:14px;
+        height:44px;
         border: 1px solid clr(dark, shade-25);
         border-radius: 4px;
         padding: 13px 15px;
@@ -26,6 +27,29 @@
             border-color:clr(dark, shade-50);
             outline:none;
         }
+    }
+
+    &--withicon {
+        input {
+            padding: 13px 50px 13px 15px;
+        }
+    }
+
+    span.material-icons {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:44px;
+        height:44px;
+        position: absolute;
+        bottom: 0;
+        right:0;
+        @include linear-gradient(180deg, $primary-color, $primary-gradient-color);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color:transparent;
+        cursor:pointer;
     }
     
 }

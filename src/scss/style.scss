@@ -2,6 +2,7 @@
 
 // colors
 $primary-color: #BC9CFF;
+$primary-gradient-color: #8BA4F9;
 $secondary-color: #6FCF97;
 $dark-color: #1F2041;
 $colors: (
@@ -23,6 +24,17 @@ $colors: (
 @function clr($base, $shade: base) {
     $color: map-get(map-get($colors, $base), $shade);
     @return $color;
+}
+
+@mixin linear-gradient($direction, $fromColor, $toColor){
+  background-color: $toColor;
+  background-image: -webkit-gradient(linear, $direction, from($fromColor), to($toColor));
+  background-image: -webkit-linear-gradient($direction, $fromColor, $toColor);
+  background-image:    -moz-linear-gradient($direction, $fromColor, $toColor);
+  background-image:     -ms-linear-gradient($direction, $fromColor, $toColor);
+  background-image:      -o-linear-gradient($direction, $fromColor, $toColor);
+  background-image:         linear-gradient($direction, $fromColor, $toColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
 }
 
 // typo
