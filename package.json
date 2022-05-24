@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "inputmask": "^5.0.7",
-    "material-icons": "^1.10.11"
+    "material-icons": "^1.10.11",
+    "nouislider": "^15.6.0"
   }
 }

@@ -66,7 +66,10 @@ const fonts = {
 const config = {
 	mode: IS_DEV ? 'development' : 'production',
 	devtool: IS_DEV ? 'eval' : 'source-map',
-	entry: './src/js/index.js',
+	entry: {
+		index: './src/js/index.js',
+		button: './src/components/UI/button'
+	},
 	output: {
 		filename: 'js/[name].bundle.js',
 		path: path.resolve(__dirname, 'dist')

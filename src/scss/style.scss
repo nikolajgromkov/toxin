@@ -21,9 +21,18 @@ $colors: (
     )
 );
 
+$sizes: (
+    "base": 12px,
+);
+
 @function clr($base, $shade: base) {
     $color: map-get(map-get($colors, $base), $shade);
     @return $color;
+}
+
+@function fsize($base: base) {
+    $size: map-get($sizes, $base);
+    @return $size;
 }
 
 @mixin linear-gradient($direction, $fromColor, $toColor){

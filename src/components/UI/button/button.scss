@@ -1,0 +1,17 @@
+.button {
+  display: inline-block;
+  height:44px;
+  line-height:44px;
+  padding: 0 20px;
+  border-radius: 22px;
+  font-size: fsize(base);
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &--outline {
+
+  }
+  &--block {
+
+  }
+}
