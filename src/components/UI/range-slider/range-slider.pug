@@ -1,0 +1,11 @@
+mixin range-slider(options)
+  .range-slider
+    .range-slider__header
+      .range-slider__label= options.label
+      .range-slider__price
+        | 5000₽ - 10000₽
+    .range-slider__body
+      input(type="hidden" id="filter_price_from" name="filter_price_from")
+      input(type="hidden" id="filter_price_to" name="filter_price_to")
+      .range-slider__container
+    .range-slider__caption= options.caption

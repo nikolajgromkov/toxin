@@ -1,50 +1,5 @@
 @import './reset';
-
-// colors
-$primary-color: #BC9CFF;
-$primary-gradient-color: #8BA4F9;
-$secondary-color: #6FCF97;
-$dark-color: #1F2041;
-$colors: (
-    "primary": (
-        "base": $primary-color
-    ),
-    "secondary": (
-        "base": $secondary-color
-    ),
-    "dark": (
-        "base": $dark-color,
-        "shade-75": rgba($dark-color, .75), 
-        "shade-50": rgba($dark-color, .50), 
-        "shade-25": rgba($dark-color, .25), 
-        "shade-5": rgba($dark-color, .5), 
-    )
-);
-
-$sizes: (
-    "base": 12px,
-);
-
-@function clr($base, $shade: base) {
-    $color: map-get(map-get($colors, $base), $shade);
-    @return $color;
-}
-
-@function fsize($base: base) {
-    $size: map-get($sizes, $base);
-    @return $size;
-}
-
-@mixin linear-gradient($direction, $fromColor, $toColor){
-  background-color: $toColor;
-  background-image: -webkit-gradient(linear, $direction, from($fromColor), to($toColor));
-  background-image: -webkit-linear-gradient($direction, $fromColor, $toColor);
-  background-image:    -moz-linear-gradient($direction, $fromColor, $toColor);
-  background-image:     -ms-linear-gradient($direction, $fromColor, $toColor);
-  background-image:      -o-linear-gradient($direction, $fromColor, $toColor);
-  background-image:         linear-gradient($direction, $fromColor, $toColor);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
-}
+@import './utility';
 
 // typo
 @font-face {
@@ -66,15 +21,21 @@ $sizes: (
         url('../fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
   }
 
 // components
 @import '../components/UI/textfield/textfield';
 
-body {
+body, html {
     color: clr(dark);
+    font-size: fsize(base);
     font-family: 'Montserrat', Helvetica, sans-serif;
-    &.uikit {
-        padding: 140px;
+}
+
+.uikit {
+    padding: 140px;
+    &__group {
+        margin-bottom:50px;
     }
 }

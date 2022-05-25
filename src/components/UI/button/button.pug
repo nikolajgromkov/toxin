@@ -1,9 +1,15 @@
 mixin button(options)
   -
     var buttonClass = "button"
-    buttonClass += options.isOutline ? " .button--outline" : ""
-    buttonClass += options.isBlock ? " .button--block" : ""
-  if options.isLink
-    a(href=options.href class=buttonClass)= options.content
+    buttonClass += options.isOutline ? " button--outline" : ""
+    buttonClass += options.isBlock ? " button--block" : ""
+  if options.href
+    a(href=options.href class=buttonClass)
+      if options.icon
+        span.material-icons= options.icon
+      span= options.content
   else
-    button(class=buttonClass)= options.content
+    button(class=buttonClass)
+      if options.icon
+        span.material-icons= options.icon
+      span= options.content

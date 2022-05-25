@@ -1,13 +1,25 @@
 include ./components/UI/textfield/textfield
 include ./components/UI/button/button
+include ./components/UI/range-slider/range-slider
+include ./components/UI/checkbox/checkbox
 
 doctype html
 html
   head
     title UIKit
   body.uikit
-    +textfield({name: "email", id: "email", label:"Email", placeholder: "Email", mask: "email"})
-    +textfield({name: "birthday", id: "birthday", label: "День рождения", placeholder: "ДД.ММ.ГГГГ", mask: "date"})
-    +textfield({name: "subscription", id: "subscription", label: "Email для рассылок", placeholder: "Email", mask: "email", icon: "arrow_forward"})
-
-    +button({content: "Зарегистрироваться", isLink: false})
+    .uikit__group
+      +textfield({name: "email", id: "email", label:"Email", placeholder: "Email", mask: "email"})
+      +textfield({name: "birthday", id: "birthday", label: "День рождения", placeholder: "ДД.ММ.ГГГГ", mask: "date"})
+      +textfield({name: "subscription", id: "subscription", label: "Email для рассылок", placeholder: "Email", mask: "email", icon: "arrow_forward"})
+    .uikit__group
+      +button({content: "Зарегистрироваться"})
+      +button({content: "Войти", isOutline:true})
+      +button({href:"/fake-page", content: "Перейти к оплате", isBlock:true, icon: "arrow_forward"})
+    .uikit__group
+      +range-slider({label: "Диапазон цены", caption: "Стоимость за сутки пребывания в номере"})
+    .uikit__group 
+      +checkbox({label:"Можно курить", id: "checkbox1"})
+      +checkbox({label:"Можно с питомцами", id: "checkbox2"})
+      +checkbox({label:"Можно пригласить гостей (до 10 человек)", id: "checkbox3"})
+    
