@@ -1,0 +1,45 @@
+@import '../../../scss/utility';
+
+.range-slider {
+  width:100%;
+  max-width: 320px;
+  &__header {
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  &__label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: clr(dark);
+  }
+
+  &__price {
+    font-weight: 400;
+    color: clr(dark, shade-50);
+  }
+
+  &__caption {
+    margin-top: 10px;
+    font-size: fsize(base);
+    color: clr(dark, shade-50);
+  }
+  &__container {
+    height: 6px;
+    .noUi-connect {
+      @include linear-gradient(180deg, $secondary-color, $secondary-gradient-color);
+    }
+    .noUi-handle {
+      height: 12px;
+      width: 12px;
+      top: -4px;
+      right: -6px;
+      border-radius: 9px;
+      box-shadow:none;
+      border:1px solid #fff;
+      @include linear-gradient(180deg, $secondary-color, $secondary-gradient-color);
+    }
+  }
+}
+

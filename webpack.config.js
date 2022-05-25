@@ -68,7 +68,8 @@ const config = {
 	devtool: IS_DEV ? 'eval' : 'source-map',
 	entry: {
 		index: './src/js/index.js',
-		button: './src/components/UI/button'
+		button: './src/components/UI/button',
+		rangeSlider: './src/components/UI/range-slider'
 	},
 	output: {
 		filename: 'js/[name].bundle.js',

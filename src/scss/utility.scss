@@ -1,0 +1,47 @@
+$primary-color: #BC9CFF;
+$primary-gradient-color: #8BA4F9;
+$secondary-color: #6FCF97;
+$secondary-gradient-color:#66D2EA;
+$dark-color: #1F2041;
+$colors: (
+    "primary": (
+        "base": $primary-color
+    ),
+    "secondary": (
+        "base": $secondary-color
+    ),
+    "dark": (
+        "base": $dark-color,
+        "shade-75": rgba($dark-color, .75), 
+        "shade-50": rgba($dark-color, .50), 
+        "shade-25": rgba($dark-color, .25), 
+        "shade-5": rgba($dark-color, .5), 
+    )
+);
+
+$sizes: (
+    "base": 12px,
+);
+
+@function clr($base, $shade: base) {
+    $color: map-get(map-get($colors, $base), $shade);
+    @return $color;
+}
+
+@function fsize($base: base) {
+    $size: map-get($sizes, $base);
+    @return $size;
+}
+
+@mixin linear-gradient($direction, $fromColor, $toColor){
+    background-image: -webkit-gradient(linear, left top, left bottom, from($direction), color-stop($fromColor), to($toColor));
+    background-image: -o-linear-gradient($direction, $fromColor, $toColor);
+    background-image: linear-gradient($direction, $fromColor, $toColor);
+}
+
+
+@mixin outline-gradient($direction, $fromColor, $toColor){
+    background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)), -webkit-gradient(linear, left top, left bottom, from($direction), color-stop($fromColor), to($toColor));
+    background-image: -o-linear-gradient(white, white), -o-linear-gradient($direction, $fromColor, $toColor);
+    background-image: linear-gradient(white, white), linear-gradient($direction, $fromColor, $toColor);
+}
