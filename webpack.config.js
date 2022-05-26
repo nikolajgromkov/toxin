@@ -69,7 +69,11 @@ const config = {
 	entry: {
 		index: './src/js/index.js',
 		button: './src/components/UI/button',
-		rangeSlider: './src/components/UI/range-slider'
+		rangeSlider: './src/components/UI/range-slider',
+		checkbox: './src/components/UI/checkbox',
+		checkboxList: './src/components/UI/checkbox-list',
+		dateDropdown: './src/components/UI/date-dropdown',
+		likeButton: './src/components/UI/like-button',
 	},
 	output: {
 		filename: 'js/[name].bundle.js',

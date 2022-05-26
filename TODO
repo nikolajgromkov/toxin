@@ -1,0 +1,30 @@
+
+Todo UI:
+  ✔ SCSS preparing @done(22-05-26 11:16)
+  ✔ Textfield @done(22-05-24 11:11)
+    ✔ Masked Date @done(22-05-24 11:12)
+    ✔ Masked Email @done(22-05-24 11:12)
+    ✔ With icon btn @done(22-05-24 11:12)
+  ☐ Checkbox list
+    ✔ Checkbox @done(22-05-25 11:13)
+    ☐ Rich Checkbox
+  ✔ Range Slider @done(22-05-25 11:13)
+  ✔ Buttons @done(22-05-25 11:13)
+    ✔ Normal @done(22-05-25 11:13)
+    ✔ Outline @done(22-05-25 11:13)
+    ✔ Block @done(22-05-25 11:13)
+  ☐ Radio Buttons
+  ☐ Toggle
+  ☐ Like Button
+  ☐ Rate Button
+  ☐ Pagination
+  ☐ Date dropdown
+    ☐ Two fields
+    ☐ One field with range
+  ☐ Dropdown counter
+  ☐ Expandable checkbox list
+  ☐ Icon Text list
+  ☐ Review item
+  ☐ Bullet list
+
+

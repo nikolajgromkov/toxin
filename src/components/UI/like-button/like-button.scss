@@ -1,0 +1,21 @@
+@import '../../../scss/utility';
+
+.like-button {
+  display: flex;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 10px;
+  border: 1px solid clr(dark, shade-25);
+  &--active {
+    border-color: clr(primary)
+  }
+  span.material-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    width: 20px;
+    height: 20px;
+    color: clr(dark, shade-25);
+  }
+}

@@ -27,6 +27,12 @@
   }
   &__container {
     height: 6px;
+    .noUi-tooltip {
+      display: none;
+    }
+    .noUi-active .noUi-tooltip {
+        display: block;
+    }
     .noUi-connect {
       @include linear-gradient(180deg, $secondary-color, $secondary-gradient-color);
     }

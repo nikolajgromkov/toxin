@@ -1,0 +1,19 @@
+@import '../../../scss/utility';
+
+.checkbox-list {
+  max-width:222px;
+  &__header {
+    margin-bottom: 16px;
+  }
+  &__label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: clr(dark);
+  }
+  .checkbox {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+}

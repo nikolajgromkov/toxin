@@ -1,0 +1,9 @@
+.date-dropdown{
+  &--double {
+      display: flex;
+  }
+  .dropdown {
+    display:flex;
+    flex-direction: column;
+  }
+}

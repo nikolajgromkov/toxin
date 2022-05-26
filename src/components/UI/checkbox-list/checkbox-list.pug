@@ -1,0 +1,8 @@
+include ../checkbox/checkbox
+mixin checkbox-list(items, options)
+  .checkbox-list
+    .checkbox-list__header 
+      .checkbox-list__label= options.label
+    .checkbox-list__body
+      each item, index in items 
+        +checkbox({label: item, id: "checkbox" + index})

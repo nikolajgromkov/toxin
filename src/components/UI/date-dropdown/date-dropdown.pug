@@ -1,0 +1,11 @@
+mixin date-dropdown(options)
+    -
+        var parentClassName = "date-dropdown"
+        parentClassName += options.double ? " date-dropdown--double" : ""
+    div(class=parentClassName)
+        .dropdown
+            label(for="checkin") Пребывание
+            input(type="text", id="checkin", name="checkin" class="js-checkin-input", placeholder="ДД.ММ.ГГГГ")
+        .dropdown
+            label(for="checkout") Выезд
+            input(type="text", id="checkout", class="js-checkout-input", name="checkout", placeholder="ДД.ММ.ГГГГ")

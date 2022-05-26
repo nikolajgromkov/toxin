@@ -21,6 +21,7 @@ $colors: (
 
 $sizes: (
     "base": 12px,
+    "small": 14px,
 );
 
 @function clr($base, $shade: base) {

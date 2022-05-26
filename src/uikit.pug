@@ -1,19 +1,29 @@
 include ./components/UI/textfield/textfield
 include ./components/UI/button/button
 include ./components/UI/range-slider/range-slider
+include ./components/UI/checkbox-list/checkbox-list
+include ./components/UI/date-dropdown/date-dropdown
+include ./components/UI/like-button/like-button
 
 doctype html
 html
   head
     title UIKit
   body.uikit
-    +textfield({name: "email", id: "email", label:"Email", placeholder: "Email", mask: "email"})
-    +textfield({name: "birthday", id: "birthday", label: "День рождения", placeholder: "ДД.ММ.ГГГГ", mask: "date"})
-    +textfield({name: "subscription", id: "subscription", label: "Email для рассылок", placeholder: "Email", mask: "email", icon: "arrow_forward"})
-
-    +button({content: "Зарегистрироваться"})
-    +button({content: "Войти", isOutline:true})
-    +button({href:"/fake-page", content: "Перейти к оплате", isBlock:true, icon: "arrow_forward"})
-
-    +range-slider({label: "Диапазон цены", caption: "Стоимость за сутки пребывания в номере"})
-    
+    .uikit__group
+      +textfield({name: "email", id: "email", label:"Email", placeholder: "Email", mask: "email"})
+      +textfield({name: "birthday", id: "birthday", label: "День рождения", placeholder: "ДД.ММ.ГГГГ", mask: "date"})
+      +textfield({name: "subscription", id: "subscription", label: "Email для рассылок", placeholder: "Email", mask: "email", icon: "arrow_forward"})
+    .uikit__group
+      +button({content: "Зарегистрироваться"})
+      +button({content: "Войти", isOutline:true})
+      +button({href:"/fake-page", content: "Перейти к оплате", isBlock:true, icon: "arrow_forward"})
+    .uikit__group
+      +range-slider({label: "Диапазон цены", caption: "Стоимость за сутки пребывания в номере"})
+    .uikit__group
+      - const checkboxesArray = ["Можно курить", "Можно с питомцами", "Можно пригласить гостей (до 10 человек)"] 
+      +checkbox-list(checkboxesArray, {label:"Правила дома"})
+    .uikit__group
+      +date-dropdown({double: true})
+    .uikit__group 
+      +like-button()
