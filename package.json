@@ -23,7 +23,7 @@
     "css-url-relative-plugin": "^1.1.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
-    "image-webpack-loader": "^8.1.0",
+    "image-webpack-loader": "^3.3.1",
     "mini-css-extract-plugin": "^2.6.0",
     "node-sass": "^7.0.1",
     "postcss-loader": "^6.1.1",
@@ -36,6 +36,7 @@
     "webpack-dev-server": "^4.3.1"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.1.1",
     "air-datepicker": "^3.2.0",
     "inputmask": "^5.0.7",
     "material-icons": "^1.10.11",

@@ -1,6 +1,22 @@
 @import './reset';
 @import './utility';
 
+// components
+@import '../components/UI/textfield/textfield';
+@import '../components/UI/button/button';
+@import '../components/UI/range-slider/range-slider';
+@import '../components/UI/checkbox/checkbox';
+@import '../components/UI/checkbox-list/checkbox-list';
+@import '../components/UI/date-dropdown/date-dropdown';
+@import '../components/UI/like-button/like-button';
+
+
+@import '../blocks/rate-button/rate-button';
+@import '../blocks/toggle/toggle';
+@import '../blocks/pagination/pagination';
+
+
+
 // typo
 @font-face {
     font-family: 'Montserrat';
@@ -27,8 +43,7 @@
             url('../fonts/montserrat-v24-latin_cyrillic-700.svg#Montserrat') format('svg'); /* Legacy iOS */
 }
 
-// components
-@import '../components/UI/textfield/textfield';
+
 
 body, html {
     color: clr(dark);

@@ -5,6 +5,10 @@ include ./components/UI/checkbox-list/checkbox-list
 include ./components/UI/date-dropdown/date-dropdown
 include ./components/UI/like-button/like-button
 
+include ./blocks/rate-button/rate-button
+include ./blocks/toggle/toggle
+include ./blocks/pagination/pagination
+
 doctype html
 html
   head
@@ -27,3 +31,11 @@ html
       +date-dropdown({double: true})
     .uikit__group 
       +like-button()
+    .uikit__group 
+      +rate-button()
+    .uikit__group
+      +toggle('Получать спецпредложения')
+    .uikit__group 
+      i.fa-brands.fa-twitter
+    .uikit__group 
+      +pagination({start: 1, current: 2, last: 15})

@@ -1,0 +1,56 @@
+@import 'SCSS/utility';
+
+.toggle {
+
+  $block-name:                &; // #{$block-name}__element
+
+  
+
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &__caption {
+    margin-left: 10px;
+    font-size: fsize(small);
+    cursor: pointer;
+  }
+
+  &__input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    &:checked + span {
+      border-color: #BC9CFF;
+      &:after {
+        margin-left: calc(100% - 12px);
+        @include linear-gradient(180deg, $primary-color, $primary-gradient-color);
+      }
+    }
+    
+  }
+  &__body {
+    display: inline-flex;
+    width: 40px;
+    height: 20px;
+    align-items: center;
+    border: 1px solid clr(dark, shade-25);
+    border-radius: 10px;
+    position: relative;
+    transition: 0.5s;
+    padding: 0 4px;
+    cursor: pointer;
+    &::after {
+      content: "";
+      width: 12px;
+      height: 12px;
+      background-color: clr(dark, shade-25);
+      border-radius: 100%;
+      transition: 0.5s;
+    }
+    &:active:after {
+      width: 20px;
+    }
+  }
+}

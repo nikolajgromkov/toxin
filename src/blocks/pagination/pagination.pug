@@ -1,0 +1,39 @@
+//- Все примеси в этом файле должны начинаться c имени блока (pagination)
+
+mixin pagination(options, mods)
+
+  //- Принимает:
+  //-   options    {object} - объект опций
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +pagination('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' pagination--' + modsList[i].trim();
+      }
+    }
+
+  .pagination(class=allMods)&attributes(attributes)
+    .pagination__inner
+      .pagination__body
+        - 
+          const start = options.start 
+          const current = options.current
+          const last = options.last
+        ul.pagination__links
+          each i in [0, 1, 2]
+            li
+              a(class=`pagination__item ${(start + i) == current ? 'pagination__item--active': ''}` href=`/search-room?page=${start + i}`)= start + i
+          li 
+            span.pagination__item
+              | ...
+          li 
+            a(class="pagination__item" href=`/search-room?page=${last}`)= last
+        a(class="pagination__item pagination__forward" href=`/search-room?page=${current + 1}`)
+            | arrow_forward
+      .pagination__caption

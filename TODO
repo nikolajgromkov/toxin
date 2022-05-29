@@ -14,9 +14,9 @@ Todo UI:
     ✔ Outline @done(22-05-25 11:13)
     ✔ Block @done(22-05-25 11:13)
   ☐ Radio Buttons
-  ☐ Toggle
-  ☐ Like Button
-  ☐ Rate Button
+  ✔ Toggle @done(22-05-29 22:39)
+  ✔ Like Button @done(22-05-28 23:22)
+  ✔ Rate Button @done(22-05-28 23:22)
   ☐ Pagination
   ☐ Date dropdown
     ☐ Two fields

@@ -1,0 +1,26 @@
+@import 'SCSS/utility';
+
+.rate-button {
+  $block-name:                &; // #{$block-name}__element
+  &__star {
+    cursor: pointer;
+    &:before {
+      content:'favorite_border';
+      position: relative;
+      font-family: 'Material Icons';
+      font-size: 24px;
+      @include linear-gradient(180deg, $primary-color, $primary-gradient-color);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+
+    &--active {
+      &:before {
+        content: 'favorite'
+      }
+    }
+
+  }
+}

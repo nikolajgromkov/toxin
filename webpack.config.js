@@ -66,14 +66,13 @@ const fonts = {
 const config = {
 	mode: IS_DEV ? 'development' : 'production',
 	devtool: IS_DEV ? 'eval' : 'source-map',
+	resolve: {
+    alias: {
+      SCSS: path.resolve(__dirname, 'src/scss/'),
+    },
+  },
 	entry: {
-		index: './src/js/index.js',
-		button: './src/components/UI/button',
-		rangeSlider: './src/components/UI/range-slider',
-		checkbox: './src/components/UI/checkbox',
-		checkboxList: './src/components/UI/checkbox-list',
-		dateDropdown: './src/components/UI/date-dropdown',
-		likeButton: './src/components/UI/like-button',
+		index: './src/js/index.js'
 	},
 	output: {
 		filename: 'js/[name].bundle.js',
