@@ -8,6 +8,7 @@ include ./components/UI/like-button/like-button
 include ./blocks/rate-button/rate-button
 include ./blocks/toggle/toggle
 include ./blocks/pagination/pagination
+include ./blocks/dropdown/dropdown
 
 doctype html
 html
@@ -30,7 +31,7 @@ html
     .uikit__group
       +date-dropdown({double: true})
     .uikit__group 
-      +like-button()
+      +like-button({likes: 4})
     .uikit__group 
       +rate-button()
     .uikit__group
@@ -39,3 +40,9 @@ html
       i.fa-brands.fa-twitter
     .uikit__group 
       +pagination({start: 1, current: 2, last: 15})
+    .uikit__group 
+      +dropdown({label: 'Сколько гостей', items: [
+          {name: 'Взрослые', count: 0, declensions: "гость, гостя, гостей"},
+          {name: 'Дети', count: 0, declensions: "гость, гостя, гостей"},
+          {name: 'Младенцы', count: 0, declensions: "младенец, младенца, младенцев"},
+      ]})

@@ -1,0 +1,36 @@
+//- Все примеси в этом файле должны начинаться c имени блока (dropdown)
+
+mixin dropdown(options, mods)
+
+  //- Принимает:
+  //-   options    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +dropdown('Сколько гостей', items: [
+          {name: 'Взрослые', count: 0, declensions: ["гость", "гостя", "гостей"]},
+          {name: 'Дети', count: 0, declensions: ["гость", "гостя", "гостей"]},
+          {name: 'Младенцы', count: 0, declensions: ["младенец", "младенца", "младенцев"]},
+        ])
+
+  -
+    // список модификаторов
+    let allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      const modsList = mods.split(',');
+      for (let i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' dropdown--' + modsList[i].trim();
+      }
+    }
+  .dropdown(class=allMods)&attributes(attributes)
+    .dropdown__inner
+      .dropdown__control= options.label  
+      .dropdown__body
+        .dropdown__counters
+          each item in options.items 
+            .counter(data-declensions=item.declensions)
+              input(type="button" class="counter__minus" value="-")
+              input(type="text" name=item.name size="25" value=item.count)
+              input(type="button" class="counter__plus" value="+")
+
+
+

@@ -9,12 +9,10 @@
   color: clr(dark, shade-25);
   cursor:pointer;
 
-  &--active {
-    border-color: clr(primary);
-    color: clr(primary);
-  }
 
-  span.material-icons {
+  &:before {
+    content:'favorite_border';
+    font-family: 'Material Icons';
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,6 +21,15 @@
     height: 20px;
     
   }
+
+  &--active {
+    border-color: clr(primary);
+    color: clr(primary);
+    &:before {
+      content:'favorite';
+    }
+  }
+
   &__counter {
     font-size: 13px;
   }

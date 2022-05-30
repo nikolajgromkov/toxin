@@ -5,10 +5,10 @@ import '../components/UI/checkbox'
 import '../components/UI/checkbox-list'
 import '../components/UI/date-dropdown'
 import '../components/UI/like-button'
-import '../blocks/rate-button/rate-button'
 
 import '../blocks/rate-button/rate-button'
 import '../blocks/toggle/toggle'
+import '../blocks/dropdown/dropdown'
 
 
 import 'material-icons/iconfont/material-icons.css';

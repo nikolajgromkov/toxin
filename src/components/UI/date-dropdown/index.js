@@ -1,7 +1,7 @@
 import './date-dropdown.scss';
 import AirDatepicker from 'air-datepicker';
 import 'air-datepicker/air-datepicker.css';
-console.log(123);
+
 const checkInInput = document.querySelector('.js-checkin-input');
 const checkOutInput = document.querySelector('.js-checkout-input')
 const checkInDatepicker = new AirDatepicker(checkInInput, {
