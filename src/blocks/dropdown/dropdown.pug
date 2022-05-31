@@ -7,7 +7,7 @@ mixin dropdown(options, mods)
   //-   mods    {string} - список модификаторов
   //- Вызов:
         +dropdown('Сколько гостей', items: [
-          {name: 'Взрослые', count: 0, declensions: ["гость", "гостя", "гостей"]},
+          {name: 'Взрослые', count: 0, declensions: ''гость", "гостя", "гостей"]},
           {name: 'Дети', count: 0, declensions: ["гость", "гостя", "гостей"]},
           {name: 'Младенцы', count: 0, declensions: ["младенец", "младенца", "младенцев"]},
         ])
@@ -23,14 +23,20 @@ mixin dropdown(options, mods)
     }
   .dropdown(class=allMods)&attributes(attributes)
     .dropdown__inner
-      .dropdown__control= options.label  
+      .dropdown__header= options.label
+      .dropdown__control
+        span= options.placeholder
+        .dropdown__icon
+          | expand_more
       .dropdown__body
-        .dropdown__counters
+        .dropdown__options
           each item in options.items 
-            .counter(data-declensions=item.declensions)
-              input(type="button" class="counter__minus" value="-")
-              input(type="text" name=item.name size="25" value=item.count)
-              input(type="button" class="counter__plus" value="+")
+            .dropdown__option(data-declensions=item.declensions)
+              .dropdown__label= item.name
+              .dropdown__counter
+                input(type="button" class="counter__minus" value="-")
+                input(type="text" name=item.name size="1" value=item.count)
+                input(type="button" class="counter__plus" value="+")
 
 
 

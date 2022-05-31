@@ -22,7 +22,15 @@ $colors: (
 $sizes: (
     "base": 12px,
     "small": 14px,
+    "big": 16px,
+    "large": 18px
 );
+
+@mixin label-style() {
+    color: clr(dark);
+    text-transform: uppercase;
+    font-weight: 700;
+}
 
 @function clr($base, $shade: base) {
     $color: map-get(map-get($colors, $base), $shade);

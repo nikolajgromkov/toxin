@@ -41,8 +41,9 @@ html
     .uikit__group 
       +pagination({start: 1, current: 2, last: 15})
     .uikit__group 
-      +dropdown({label: 'Сколько гостей', items: [
+      +dropdown({label: "Гости", placeholder: "Сколько гостей", items: [
           {name: 'Взрослые', count: 0, declensions: "гость, гостя, гостей"},
           {name: 'Дети', count: 0, declensions: "гость, гостя, гостей"},
           {name: 'Младенцы', count: 0, declensions: "младенец, младенца, младенцев"},
-      ]})
+      ]}, 'guests')
+
