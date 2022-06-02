@@ -17,6 +17,10 @@
     max-width: 320px;
   }
 
+  &__inner {
+    position: relative;
+  }
+
   &__header {
     @include label-style();
     margin-bottom: 5px;
@@ -42,6 +46,7 @@
     justify-content: space-between;
     border: 1px solid clr(dark, shade-50);
     color: clr(dark, shade-75);
+    cursor: pointer;
     span {
       display: inline-block;
       padding: 12px 15px;
@@ -49,10 +54,14 @@
   }
 
   &__body {
+    display:none;
+    width:100%;
+    position:absolute;
     padding: 13px 7px 7px 15px;
     border: 1px solid clr(dark, shade-50);
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
+    &.show {display:block;}
   }
 
   &__label {
@@ -75,12 +84,26 @@
       border: 1px solid clr(dark, shade-25);
       color: clr(dark, shade-50);
       font-size: fsize(large);
+      cursor: pointer;
+      &:disabled {
+        opacity: .38;
+        cursor: not-allowed;
+      }
     }
-    input[type="text"] {
+    input[type="number"] {
       font-weight: 700;
       text-align: center;
       border: none;
+
+      -moz-appearance: textfield;
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
       &:focus {outline: none}
+
     }
   }
 

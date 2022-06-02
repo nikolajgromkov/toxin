@@ -33,9 +33,9 @@ mixin dropdown(options, mods)
           each item in options.items 
             .dropdown__option(data-declensions=item.declensions)
               .dropdown__label= item.name
-              .dropdown__counter
-                input(type="button" class="counter__minus" value="-")
-                input(type="text" name=item.name size="1" value=item.count)
+              .dropdown__counter.counter
+                input(type="button" class="counter__minus" value="-" disabled="true")
+                input(type="number" min="0" max="99" class="counter__input" name=item.name size="1" value=item.count)
                 input(type="button" class="counter__plus" value="+")
 
 
