@@ -8,13 +8,15 @@ const pluralize = (num, declensions) => {
 
   const lastDigit = num % 10;
   const lastTwoDigits = num % 100;
+  const declensionsArray = declensions.split(',');
 
-  if (lastDigit === 1 && lastTwoDigits !== 11) return declensions[0]
+  if (lastDigit === 1 && lastTwoDigits !== 11) return declensionsArray[0]
   else if (
     lastDigit === 2 && lastTwoDigits !== 12 || 
     lastDigit === 3 && lastTwoDigits !== 13 ||
-    lastDigit === 4 && lastTwoDigits !== 14) return declensions[1]
-  else return declensions[2]
+    lastDigit === 4 && lastTwoDigits !== 14) return declensionsArray[1]
+  else return declensionsArray[2]
+  
 }
 
 ready(function() {
@@ -28,6 +30,22 @@ ready(function() {
     if (result < input.min) return input.min;
     else if (result > input.max) return input.max;
     else return result;
+  }
+
+  const sumValuesByName = (arr) => {
+    return Array.from(arr.reduce(
+      (m, {name, value}) => m.set(name, (m.get(name) || 0) + value), new Map
+    ), ([name, value]) => ({name, value}));
+  }
+
+  const getDropdownCaption = (arr) => {    
+    const notZeroElements = arr.filter(el => el.value > 0);
+    const caption = notZeroElements.reduce((acc, el, index) => (
+      acc + el.value + ' ' + pluralize(el.value, el.name) + (notZeroElements.length !== index + 1 ? ", " : "")
+    ), '');
+    console.log("notZeroElements", notZeroElements);
+    console.log(caption);
+    return caption;
   }
 
   const handleClick = (e) => {
@@ -46,15 +64,25 @@ ready(function() {
 
   const handleChange = (e) => {
 
-    let resultText = '';
+    
+
+    const countersValues = [];
 
     Array.prototype.map.call(allCounters, (counter) => {
       const input = counter.querySelector(".counter__input");
-      resultText += input.value + " " + pluralize(input.value, input.dataset.declensions);
-      console.log(input.dataset.declensions);
+      const declensions = input.dataset.declensions;
+      //resultText += input.value + " " + pluralize(input.value, declensionsArray);
+
+      countersValues.push({name: declensions, value: parseInt(input.value)});
+
+
     })
 
-    document.querySelector('.dropdown__control span').innerHTML =  resultText;
+    console.log(countersValues);
+
+    const resultArray = sumValuesByName(countersValues);
+
+    document.querySelector('.dropdown__control span').innerHTML =  getDropdownCaption(resultArray);
 
   }
 
