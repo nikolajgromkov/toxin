@@ -6,6 +6,11 @@ const pluralize = (num, declensions) => {
   //-   num    {number} - число
   //-   declensions    {array} - массив из трёх склонений
 
+  // todo
+  //- сделать изоляцию каждого дропдауна, сейчас цепляет первый при изменении второго
+  //- если младенец и взрослых нет то добавляется взрослый
+  //- при возвращении на нули восстанавливать placeholder
+
   const lastDigit = num % 10;
   const lastTwoDigits = num % 100;
   const declensionsArray = declensions.split(',');
